@@ -1,27 +1,3 @@
-7/15
-Project Title - Find Your Forever Friend
-
-Project Description
-search categories (input) - Location, Species, Sex, Age, Size
-output - Best Match + other options
-
-Website designed to help you find your next pet.
-
-User story -
-
-AS A pet-lover with a specific taste
-I WANT to search for my best friend
-SO THAT I can search my
-
-Wireframe or sketch of the design
-
-APIs to be used
-Petfinder API
-
-Rough breakdown of tasks
-Admin - Mackenzie
-2nd - Sangeetha
-
 ## Project Requirements
 
 You and your group will use everything you’ve learned over the past six units to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
@@ -42,6 +18,7 @@ You and your group will use everything you’ve learned over the past six units 
 * require simple or no authentication
 * return JSON response
 * are well-documented
+
 * https://coding-boot-camp.github.io/full-stack/apis/api-resources
 
 - Does not use alerts, confirms, or prompts (use modals).
