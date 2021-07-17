@@ -5,9 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header class="">
+        <h1>Find Your Forever Friend</h1>
+    </header>
+    <section id="char-pet" class="">
+        <div>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location">
+        </div>,
+        <div>
+            <label for="species">Species:</label>
+            <select id="species" name="species">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="fish">Fish</option>
+                <option value="ferrets">Ferrets</option>
+                <option value="birds">Birds</option>
+            </select>  
+        </div>
+        <div>
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select> 
+        </div>
+        <div>
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age">  
+        </div>
+        <div>
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        </div>
+    </section>
+    <section id="results" class="">
+        <div id="bestmatch">
+            <a></a>
+        </div>
+        <div id="matches">
+            <a></a>
+            <a></a>
+        </div>
+    </section>
+ <script src="script.js"></script>   
 </body>
 </html>
