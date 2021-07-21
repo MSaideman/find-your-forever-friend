@@ -1,47 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Your Foever Friend</title>
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <section>
-    <div> Search by Pet id  <select> <option> </option></select></div>
-        <br>
-        <div>location 
-            <br><select>
-            <option id="search"></option>
-        </select>
-        <div>Species 
-            <br><select>
-            <option id="Species"></option>
-        </select> 
-        <div>Sex 
-            <br><select>
-            <option id="sex"></option>
-        </select> 
-        <div>Age 
-            <br><select>
-            <option  id="age"></option>
-        </select> 
-        <div>Size 
-            <br><select>
-            <option id="size"></option>
-        </select>  
-    </div>
+        <h1 class="text-lg  text-center mt-8 font-bold">Find your Forever Friend</h1>
+        <div class="container flex justify-center items-center">
+            <div>
+                Search by Pet type: <select name="pets" id="petSearch">
+                </select>
+            </div>
+            <br/>
+            <div>
+                Location  <input type="text" id="location" " placeholder="Enter a pincode" />
+            </div>
+            <br>
+            <button>Search</button>
+        </div>
 
-</section>
-<div class="sidecontainer">
-    <div class="a">Best Match
-       <br> <a> click link to pet page</a></div>
-       <div class="b"> <br> <a> click link to pet page</a></div>
-       <div class="c"> <br> <a> click link to pet page</a></div>
-    
-</div>
-    <script src="script.js" ></script>
+
+
+    </section>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
