@@ -1,4 +1,5 @@
 var APIKey ='mDwvoqomEa5fxCiP21JBDfCukRDaZYMxceKYXzfwtRkJeicJ1j';
+var APIKeyLocation = "c924625b148e4a0181639a7660bd73e1"
 var secret ='mRZfJm0DLH12TpJJRgUtlnG5b32lHznG0Jyn2vBO';
 var token_obj = new Object();
 // Call details
@@ -59,3 +60,17 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
 });
 });
 });
+
+function httpGetAsync(url, callback) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState === 4 && xmlHttp.status === 200)
+        callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", url, true); // true for asynchronous
+    xmlHttp.send(null);
+}
+
+var url = "https://ipgeolocation.abstractapi.com/v1/?api_key=c924625b148e4a0181639a7660bd73e1"
+
+httpGetAsync(url)
