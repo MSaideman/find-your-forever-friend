@@ -4,6 +4,12 @@ var token_obj = new Object();
 // Call details
 var org = 'RI77';
 var status = 'adoptable';
+// search button
+var searchBtn = document.getElementById('search-button');
+searchBtn.addEventListener('click', searchResults);
+// back button from results page to bring to initial page 
+var backBtn = document.getElementById("back-btn");
+backBtn.addEventListener('click', returnInitPage);
 
 function initPage() {
 $( document ).ready(function() {
@@ -59,10 +65,8 @@ console.log('pets:'+data.types[i].name);
 	console.log('something went wrong', err);
 
 });
-
 });
 });
-
 
 // location search
 // This is a POST request, because we need the API to generate a new token for us
@@ -98,7 +102,7 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
     }).then(function (dataLocation) {
     
         // Log the pet data
-        console.log('pets', dataLocation);
+        console.log('location', dataLocation);
 		let locationSearch = $('#location');
 		locationSearch.append('<input>Location:</input>');
 		locationSearch.prop('selectedIndex', 0);
@@ -112,24 +116,24 @@ locationSearch.append('<input type="' + dataLocation.types[i].location + '">' + 
 
 	// Log any errors
 	console.log('something went wrong', error);
-
-});
-});
-
 // submit searched data 
-var searchBtn = document.getElementById('search-button');
-searchBtn.addEventListener('click', searchResults);
+
+searchResults();
+});
+});
+}
 
 function searchResults() {
-
-}
-}
-
-// use searched data to create results page
-var results = {
+	// use searched data to create results page
+	var results = {
 	petType: data,
 	petLocation: dataLocation
+	}
+	console.log(results);
+	showResults();
+	showMap();
 }
+
 
 // results page includes other important characteristics/img/map
 function showResults() {
@@ -141,11 +145,6 @@ function showMap() {
 
 }
 
-// back button from results page to bring to initial page 
-var backBtn = document.getElementById("back-btn");
-backBtn.addEventListener('click', returnInitialPage)
-
+// return initial page using back buttons
 function returnInitPage () {
-	return initPage();
 }
-
