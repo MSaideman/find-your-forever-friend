@@ -1,14 +1,15 @@
 var APIKey ='mDwvoqomEa5fxCiP21JBDfCukRDaZYMxceKYXzfwtRkJeicJ1j';
-var APIKeyLocation = "c924625b148e4a0181639a7660bd73e1"
 var secret ='mRZfJm0DLH12TpJJRgUtlnG5b32lHznG0Jyn2vBO';
 var token_obj = new Object();
 // Call details
 var org = 'RI77';
 var status = 'adoptable';
 
+function initPage() {
 $( document ).ready(function() {
 // Call the API
 
+// animal search
 // This is a POST request, because we need the API to generate a new token for us
 fetch('https://api.petfinder.com/v2/oauth2/token', {
 	method: 'POST',
@@ -52,10 +53,6 @@ console.log('pets:'+data.types[i].name);
 	dropdown.append('<option value="' + data.types[i].name + '">' + data.types[i].name + '</option>');
 }
 
-
-
-
-    
     }).catch(function (err) {
 
 	// Log any errors
@@ -66,16 +63,89 @@ console.log('pets:'+data.types[i].name);
 });
 });
 
-function httpGetAsync(url, callback) {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() {
-        if (xmlHttp.readyState === 4 && xmlHttp.status === 200)
-        callback(xmlHttp.responseText);
-    }
-    xmlHttp.open("GET", url, true); // true for asynchronous
-    xmlHttp.send(null);
+
+// location search
+// This is a POST request, because we need the API to generate a new token for us
+fetch('https://api.petfinder.com/v2/oauth2/token', {
+	method: 'POST',
+	body: 'grant_type=client_credentials&client_id=' + APIKey + '&client_secret=' + secret,
+	headers: {
+		'Content-Type': 'application/x-www-form-urlencoded'
+	}
+}).then(function (response) {
+
+	// Return the response as JSON
+	return response.json();
+   
+
+}).then(function (dataLocation) {
+
+	// Log the API data
+	console.log('token', dataLocation);
+     token_obj.access_token = dataLocation.token_type;
+     token_obj.expires_in = dataLocation.expires_in;
+     token_obj.token_type=dataLocation.token_type;
+    return fetch('https://api.petfinder.com/v2/animals', {
+		headers: {
+			'Authorization': dataLocation.token_type + ' ' + dataLocation.access_token,
+			'Content-Type': 'application/x-www-form-urlencoded'
+		}
+	}).then(function (response) {
+
+        // Return the API response as JSON
+        return response.json();
+    
+    }).then(function (dataLocation) {
+    
+        // Log the pet data
+        console.log('pets', dataLocation);
+		let locationSearch = $('#location');
+		locationSearch.append('<input>Location:</input>');
+		locationSearch.prop('selectedIndex', 0);
+for(var i=0;i< dataLocation.types.length; i++){
+	
+console.log('pets:'+dataLocation.types[i].location);
+locationSearch.append('<input type="' + dataLocation.types[i].location + '">' + dataLocation.types[i].location + '</input>');
 }
 
-var url = "https://ipgeolocation.abstractapi.com/v1/?api_key=c924625b148e4a0181639a7660bd73e1"
+    }).catch(function (error) {
 
-httpGetAsync(url)
+	// Log any errors
+	console.log('something went wrong', error);
+
+});
+});
+
+// submit searched data 
+var searchBtn = document.getElementById('search-button');
+searchBtn.addEventListener('click', searchResults);
+
+function searchResults() {
+
+}
+}
+
+// use searched data to create results page
+var results = {
+	petType: data,
+	petLocation: dataLocation
+}
+
+// results page includes other important characteristics/img/map
+function showResults() {
+
+}
+
+// map created using google dev API tools 
+function showMap() {
+
+}
+
+// back button from results page to bring to initial page 
+var backBtn = document.getElementById("back-btn");
+backBtn.addEventListener('click', returnInitialPage)
+
+function returnInitPage () {
+	return initPage();
+}
+

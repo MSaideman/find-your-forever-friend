@@ -1,0 +1,8 @@
+/* classes to use for different pages (initial & results) */
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
