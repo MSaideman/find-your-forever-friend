@@ -1,72 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Your Foever Friend</title>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white-700">
-    <header class="">
-        <h1>Find Your Forever Friend</h1>
-    </header>
-    <!-- Nav bar  -->
-    <na> <ul> <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-    </ul>
-</na>
-<!-- search input section  -->
-    <section id="char-pet" class="">
-        <div>
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location">
-        </div>,
-        <div>
-            <label for="species">Species:</label>
-            <select id="species" name="species">
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="fish">Fish</option>
-                <option value="ferrets">Ferrets</option>
-                <option value="birds">Birds</option>
-            </select>  
+
+<body>
+    <section>
+        <h1 class="text-lg  text-center mt-8 font-bold">Find your Forever Friend</h1>
+        <div class="container flex justify-center items-center">
+            <div>
+                Search by Pet type: <select name="pets" id="petSearch">
+                </select>
+            </div>
+            <br/>
+            <div>
+                Location  <input type="text" id="location" " placeholder="Enter a pincode" />
+            </div>
+            <br>
+            <button>Search</button>
         </div>
-        <div>
-            <label for="sex">Sex:</label>
-            <select id="sex" name="sex">
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-            </select> 
-        </div>
-        <div>
-            <label for="age">Age:</label>
-            <input type="text" id="age" name="age">  
-        </div>
-        <div>
-            <label for="size">Size:</label>
-            <select id="size" name="size">
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-        </select>
-        </div>
+
+
+
     </section>
-    <!-- result for  search section -->
-  <section>
-<div class="sidecontainer">
-    <div class="a">Best Match
-       <br> <a> click link to pet page</a></div>
-       <div class="b"> <br> <a> click link to pet page</a></div>
-       <div class="c"> <br> <a> click link to pet page</a></div>
-       <!-- picture div -->
-       <div class="md:flex"><img class="w-16 md:w-32 lg:w-48" src="..."></div>
-    
-</div>
-  </section>
-    <script src="script.js" ></script>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
