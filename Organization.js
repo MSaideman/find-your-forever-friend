@@ -2,24 +2,24 @@
 var APIKey ='mDwvoqomEa5fxCiP21JBDfCukRDaZYMxceKYXzfwtRkJeicJ1j';
 var secret ='mRZfJm0DLH12TpJJRgUtlnG5b32lHznG0Jyn2vBO';
 var token_obj = new Object();
-let objArray = [];
+let locArray = [];
 
-var animalInfoArray = new Array();
+var locationInfoArray = new Array();
+
 $(document).ready(function(){
 
    
-    getParams();
+    getOrgInfo();
 })
-function getParams(){
+function getOrgInfo(){
 
      // Get the search params out of the URL (i.e. `?q=dog&location=92128`) and convert it to an array (i.e. ['?q=london', 'format=photo'])
-  var searchParamsArr = document.location.search.split('&');
+  var searchZipcodeArr = document.location.search.split('&');
 
   // Get the query and format values
-  var animalType = searchParamsArr[0].split('=').pop();
-  var location = searchParamsArr[1].split('=').pop();
+  var zipcode = searchZipcodeArr[0].split('=').pop();
 
-  searchApi(animalType, location);
+  searchOrgApi(zipcode);
 }
 
 
@@ -27,7 +27,7 @@ function getParams(){
 
 // This is a POST request, because we need the API to generate a new token for us
 
-function searchApi(animalType, location){
+function searchOrgApi(zipcode){
 
 
     fetch('https://api.petfinder.com/v2/oauth2/token', {
@@ -49,7 +49,7 @@ function searchApi(animalType, location){
          token_obj.access_token = data.token_type;
          token_obj.expires_in = data.expires_in;
          token_obj.token_type=data.token_type;
-        return fetch(' https://api.petfinder.com/v2/animals?types='+ animalType+'&location='+location, {
+        return fetch(' https://api.petfinder.com/v2/organizations='+ zipcode, {
             headers: {
                 'Authorization': data.token_type + ' ' + data.access_token,
                 'Content-Type': 'application/json'
@@ -67,30 +67,23 @@ function searchApi(animalType, location){
             else{
                 for(let j = 0;j <20 ;j++){
 
-                   animalInfoArray[j] = new Array();
-                   var id = data.animals[j].id;
-                   var name = data.animals[j].name;
-                   var gender=data.animals[j].gender;
-                  var size =data.animals[j].size;
-                  var age =data.animals[j].age;
-                   animalInfoArray[j] = new Array(id,name,gender,size,age);
+                   orgInfoArray[j] = new Array();
+                   var address = data.address.postcode[j].address;
+                    orgInfoArray[j] = new Array(address);
 
-                    // console.log(animalInfoArray);
+                    console.log(orgInfoArray);
 
                 }
-                createTable(animalInfoArray);
+                createPopup(orgInfoArray);
+                console.log(orgInfoArray)
 
             }
     });
-});
-}
 
-// creating a table with fetch response
+// creating a popup from click event
 
-function createTable(animalInfo){
-$('#animalTable').DataTable({
+$('#locBtn').click(function(){
 
-data : animalInfo
-
+})
 });
 }
