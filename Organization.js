@@ -82,8 +82,7 @@ function searchOrgApi(zipcode){
 
 // creating a popup from click event
 
-$('#locBtn').click(function(){
-
-})
+function createPopup(zipcodeInfo){
+    $('#dialog').dialog(zipcodeInfo)
+console.log(zipcodeInfo)
 });
-}
