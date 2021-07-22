@@ -16,8 +16,8 @@
 
 <body>
     <section>
-        <h1 class="text-lg  text-center mt-8 font-bold">Find your Forever Friend</h1>
-        <div class="container flex flex-col justify-center items-center">
+        <h1 class="text-lg  text-center mt-8 font-bold font-sans">Find your Forever Friend</h1>
+        <div class="container flex flex-col justify-center items-center font-sans">
             <div>
                 Search by Pet type: <select name="pets" id="petSearch">
                 </select>
@@ -29,16 +29,8 @@
 
             </div>
             <br>
-            <button id="btnSearch">Search</button>
+            <button id="btnSearch" class="font-sans border-2 border-purple-500 hover:border-gray-500 ...">Search</button>
         </div>
-    </section>
-    <section>
-    <h1 class="text-lg  text-center mt-8 font-bold">Results</h1>
-    <!-- add html elements using javascript with search results -->
-    <div id="results-links">
-    </div>
-    <div id="map-view" class="container">
-    </div>
     </section>
     <script src="script.js"></script>
 </body>
