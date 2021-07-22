@@ -1,23 +1,29 @@
-body{
-    background-color: rgb(95, 59, 59);
+/* classes to use for different pages (initial & results) */
+.hidden {
+  visibility: hidden;
 }
-.sidecontainer{
-    padding: 10%;
-    margin: 10%;
-    background-color: rgb(219, 216, 211);
-    text-align: center;
+
+.visible {
+  visibility: visible;
 }
-.a{
-    border: black solid;
-    background-color: rgb(219, 216, 211);
-    font-size: large;
-    
+
+.sidecontainer {
+  padding: 10%;
+  margin: 10%;
+  background-color: rgb(219, 216, 211);
+  text-align: center;
 }
-.b , .c {
-    border: black solid;
-    background-color: rgb(219, 216, 211);
-    font-size: large;
+.a {
+  border: black solid;
+  background-color: rgb(219, 216, 211);
+  font-size: large;
 }
-#search{
-    box-sizing:content-box;
+.b,
+.c {
+  border: black solid;
+  background-color: rgb(219, 216, 211);
+  font-size: large;
+}
+#search {
+  box-sizing: content-box;
 }
