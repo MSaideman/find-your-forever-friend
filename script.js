@@ -47,8 +47,8 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
         return resp.json();
     
     }).then(function (data) {
-    
-        // Log the pet data
+
+        // Log the pet data (seached or all?)
         console.log('pets', data);
 		let dropdown = $('#petSearch');
 		dropdown.append('<option selected="true" disabled>Choose Pet</option>');
@@ -147,4 +147,4 @@ function showMap() {
 
 // return initial page using back buttons
 function returnInitPage () {
-}
+}q
