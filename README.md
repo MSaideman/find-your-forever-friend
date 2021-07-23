@@ -16,6 +16,7 @@ I WANT to search for my best friend
 SO THAT I can be matched properly
 
 Acceptance Criteria:
+GIVEN I’m on the landing page WHEN I enter my zip code and pet type THEN I see a list of pets nearby that I can select in order to view details AND map of animals's locations.
 
 ## Installation
 
