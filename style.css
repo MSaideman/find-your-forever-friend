@@ -18,3 +18,21 @@
 #search {
   box-sizing: content-box;
 }
+/* for pict1  */
+.pic1{
+  border:1px solid coral;
+  width: 100%;
+  
+}
+.pic2 {
+
+height: 200px;
+width: 50%;
+
+
+  
+}
+
+#petSearch:hover {
+  cursor: pointer;
+}
