@@ -2,7 +2,7 @@
 var APIKey ='mDwvoqomEa5fxCiP21JBDfCukRDaZYMxceKYXzfwtRkJeicJ1j';
 var secret ='mRZfJm0DLH12TpJJRgUtlnG5b32lHznG0Jyn2vBO';
 var token_obj = new Object();
-let objArray = [];
+
 
 var animalInfoArray = new Array();
 $(document).ready(function(){
@@ -67,7 +67,7 @@ function searchApi(animalType, location){
             else{
                 for(let j = 0;j <20 ;j++){
 
-                   animalInfoArray[j] = new Array();
+                
                    var id = data.animals[j].id;
                    var name = data.animals[j].name;
                    var gender=data.animals[j].gender;
@@ -85,10 +85,21 @@ function searchApi(animalType, location){
 
 // creating a table with fetch response
 
-function createTable(animalInfo){
-$('#animalTable').DataTable({
+// creating a table with fetch response
 
-data : animalInfo
-
-});
-}
+function createTable(animalInfoArray){
+    $('#animalTable').DataTable({
+    
+    "data" : animalInfoArray,
+    "columns": [
+        { "title": "Id" },
+        { "title": "Name" },
+        { "title": "Gender" },
+        { "title": "Size" },
+        { "title": "Age" }
+        
+    ]
+    
+    });
+    
+    }

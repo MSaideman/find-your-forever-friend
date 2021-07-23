@@ -7,16 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result Page</title>
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
     <section>
-        <h1 class="text-5xl text-center mt-8 font-extrabold font-sans text-pink-600">
+        <h1 class="text-5xl text-center mt-8 font-extrabold font-sans text-pink-600"> </h1>
+
+<table id="animalTable" class="display font-sans border-4 border-light-blue-500 border-opacity-100">
+
+    <thead>
+
+
+    </thead>
+    
+        <h1 class="text-lg text-center mt-8 font-extrabold font-sans text-pink-600">
             <div>Find your Forever Friend
                 <i class='fas fa-cat' style='font-size:24px'></i>
             </div>
@@ -24,17 +31,8 @@
 <table id="animalTable" class="table font-sans">
 
     <thead>
-<tr>
-    <th><abbr title="Animal ID"></abbr></th> 
-    <th><abbr title="Name"></abbr></th>
-    <th><abbr title="Age"></abbr> </th>
-    <th> <abbr title="Size"></abbr></th>
-    <th><abbr title="Breed"></abbr></th>
-   
-</tr>
     </thead>
-<!-- <tbody id="tbodyId">
-</tbody> -->
+
 </table>
     </section>
     <div>
@@ -47,6 +45,7 @@
   crossorigin="anonymous"></script> 
   <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.9/js/dataTables.fixedHeader.min.js"></script>
 <script src="SingleAnimal.js"></script>
 </body>
 </html>
