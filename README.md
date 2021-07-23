@@ -2,9 +2,8 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+We wanted to make this app to make pet finding simple and easy. One click of a button and you will have a list specific to find what you are looking for.
 
-- What was your motivation?
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
 - What problem does it solve?
 - What did you learn?
@@ -17,15 +16,7 @@ I WANT to search for my best friend
 SO THAT I can be matched properly
 
 Acceptance Criteria:
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+GIVEN I’m on the landing page WHEN I enter my zip code and pet type THEN I see a list of pets nearby that I can select in order to view details AND map of animals's locations.
 
 ## Installation
 
