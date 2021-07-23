@@ -66,7 +66,7 @@ console.log('pets:'+data.types[i].name);
 //Triggers when search button is clicked
 $('#btnSearch').click(function(){
 	// console.log('inside');
-	var postalcode=$( "#location" ).text();
+	var animalType=$( "#petSearch option:selected" ).text();
 	var location = $('#location').val();
 	var queryString = 'results.html?q=' + animalType + '&location=' + location;
 
