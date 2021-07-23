@@ -75,11 +75,9 @@ function searchApi(animalType, location){
                   var age =data.animals[j].age;
                    animalInfoArray[j] = new Array(id,name,gender,size,age);
 
-                    console.log(animalInfoArray);
-
+                    // console.log(animalInfoArray);
                 }
                 createTable(animalInfoArray);
-
             }
     });
 });
