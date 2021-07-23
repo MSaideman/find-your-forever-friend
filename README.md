@@ -2,9 +2,8 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+We wanted to make this app to make pet finding simple and easy. One click of a button and you will have a list specific to find what you are looking for.
 
-- What was your motivation?
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
 - What problem does it solve?
 - What did you learn?
