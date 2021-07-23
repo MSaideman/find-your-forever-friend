@@ -1,9 +1,7 @@
 var APIKey ='mDwvoqomEa5fxCiP21JBDfCukRDaZYMxceKYXzfwtRkJeicJ1j';
 var secret ='mRZfJm0DLH12TpJJRgUtlnG5b32lHznG0Jyn2vBO';
 var token_obj = new Object();
-// Call details
-var org = 'RI77';
-var status = 'adoptable';
+
 
 $( document ).ready(function() {
 // Call the API
@@ -64,3 +62,14 @@ console.log('pets:'+data.types[i].name);
 
 });
 });
+
+//Triggers when search button is clicked
+$('#btnSearch').click(function(){
+	// console.log('inside');
+	var animalType=$( "#petSearch option:selected" ).text();
+	var location = $('#location').val();
+	var queryString = 'results.html?q=' + animalType + '&location=' + location;
+
+	document.location.assign(queryString);
+
+})
