@@ -42,3 +42,9 @@ body {
   width: 100%;
   /* The width is the width of the web page */
 }
+
+button {
+  background-color: #1f305e;
+  border-radius: 1em;
+  padding: 0.25em;
+}
