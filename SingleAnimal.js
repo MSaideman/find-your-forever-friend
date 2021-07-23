@@ -49,7 +49,7 @@ function searchApi(animalType, location){
          token_obj.access_token = data.token_type;
          token_obj.expires_in = data.expires_in;
          token_obj.token_type=data.token_type;
-        return fetch(' https://api.petfinder.com/v2/animals?types='+ animalType+'&location='+location, {
+        return fetch(' https://api.petfinder.com/v2/animals?types='+ animalType+ '&location='+location, {
             headers: {
                 'Authorization': data.token_type + ' ' + data.access_token,
                 'Content-Type': 'application/json'
