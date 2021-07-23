@@ -1,12 +1,3 @@
-/* classes to use for different pages (initial & results) */
-.hidden {
-  visibility: hidden;
-}
-
-.visible {
-  visibility: visible;
-}
-
 .sidecontainer {
   padding: 10%;
   margin: 10%;
