@@ -1,9 +1,8 @@
+// API key and Secret for the session
 
 var APIKey ='mDwvoqomEa5fxCiP21JBDfCukRDaZYMxceKYXzfwtRkJeicJ1j';
 var secret ='mRZfJm0DLH12TpJJRgUtlnG5b32lHznG0Jyn2vBO';
 var token_obj = new Object();
-
-
 var animalInfoArray = new Array();
 $(document).ready(function(){
 
@@ -49,7 +48,7 @@ function searchApi(animalType, location){
          token_obj.access_token = data.token_type;
          token_obj.expires_in = data.expires_in;
          token_obj.token_type=data.token_type;
-        return fetch(' https://api.petfinder.com/v2/animals?types='+ animalType+ '&location='+location, {
+        return fetch(' https://api.petfinder.com/v2/animals?type='+ animalType+ '&location='+location, {
             headers: {
                 'Authorization': data.token_type + ' ' + data.access_token,
                 'Content-Type': 'application/json'
@@ -65,6 +64,7 @@ function searchApi(animalType, location){
                 console.log('No results found!');
             }
             else{
+                console.log("data"+ JSON.stringify(data));
                 for(let j = 0;j <20 ;j++){
 
                 
@@ -75,7 +75,7 @@ function searchApi(animalType, location){
                   var age =data.animals[j].age;
                    animalInfoArray[j] = new Array(id,name,gender,size,age);
 
-                    // console.log(animalInfoArray);
+                   
                 }
                 createTable(animalInfoArray);
             }
