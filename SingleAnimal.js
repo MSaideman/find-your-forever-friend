@@ -1,9 +1,8 @@
+// API key and Secret for the session
 
 var APIKey ='mDwvoqomEa5fxCiP21JBDfCukRDaZYMxceKYXzfwtRkJeicJ1j';
 var secret ='mRZfJm0DLH12TpJJRgUtlnG5b32lHznG0Jyn2vBO';
 var token_obj = new Object();
-
-
 var animalInfoArray = new Array();
 $(document).ready(function(){
 
@@ -76,7 +75,7 @@ function searchApi(animalType, location){
                   var age =data.animals[j].age;
                    animalInfoArray[j] = new Array(id,name,gender,size,age);
 
-                    // console.log(animalInfoArray);
+                   
                 }
                 createTable(animalInfoArray);
             }
