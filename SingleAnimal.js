@@ -2,7 +2,7 @@
 var APIKey ='mDwvoqomEa5fxCiP21JBDfCukRDaZYMxceKYXzfwtRkJeicJ1j';
 var secret ='mRZfJm0DLH12TpJJRgUtlnG5b32lHznG0Jyn2vBO';
 var token_obj = new Object();
-let objArray = [];
+
 
 var animalInfoArray = new Array();
 $(document).ready(function(){
@@ -49,7 +49,7 @@ function searchApi(animalType, location){
          token_obj.access_token = data.token_type;
          token_obj.expires_in = data.expires_in;
          token_obj.token_type=data.token_type;
-        return fetch(' https://api.petfinder.com/v2/animals?types='+ animalType+'&location='+location, {
+        return fetch(' https://api.petfinder.com/v2/animals?types='+ animalType+ '&location='+location, {
             headers: {
                 'Authorization': data.token_type + ' ' + data.access_token,
                 'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ function searchApi(animalType, location){
             else{
                 for(let j = 0;j <20 ;j++){
 
-                   animalInfoArray[j] = new Array();
+                
                    var id = data.animals[j].id;
                    var name = data.animals[j].name;
                    var gender=data.animals[j].gender;
@@ -75,11 +75,9 @@ function searchApi(animalType, location){
                   var age =data.animals[j].age;
                    animalInfoArray[j] = new Array(id,name,gender,size,age);
 
-                    console.log(animalInfoArray);
-
+                    // console.log(animalInfoArray);
                 }
                 createTable(animalInfoArray);
-
             }
     });
 });
@@ -87,10 +85,21 @@ function searchApi(animalType, location){
 
 // creating a table with fetch response
 
-function createTable(animalInfo){
-$('#animalTable').DataTable({
+// creating a table with fetch response
 
-data : animalInfo
-
-});
-}
+function createTable(animalInfoArray){
+    $('#animalTable').DataTable({
+    
+    "data" : animalInfoArray,
+    "columns": [
+        { "title": "Id" },
+        { "title": "Name" },
+        { "title": "Gender" },
+        { "title": "Size" },
+        { "title": "Age" }
+        
+    ]
+    
+    });
+    
+    }
