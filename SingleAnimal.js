@@ -69,9 +69,8 @@ function searchApi(animalType, location){
             }
             else{
                 console.log(data.animals);
-                for(let j = 0;j <25 ;j++){
-
-                
+                for(let j = 0;j <20 ;j++){
+               
                    var id = data.animals[j].id;
                    var name = data.animals[j].name;
                    var gender=data.animals[j].gender;
@@ -112,7 +111,7 @@ function createTable(animalInfoArray){
         { "title": "Gender" },
         { "title": "Size" },
         { "title": "Age" },
-        { "city": "City"}
+        { "title": "City"}
     ]
     
     });
