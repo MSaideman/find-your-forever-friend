@@ -5,28 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selected Animal</title>
-
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id="Page3">
-        <div> <h3> Name Of Animal : </h3></div>
+    <section class="container-fluid" id="Page3">
         
-        <img src=" " alt="Photo Of animal">
-    
+        
+         <h3> My name is <span id="petName"></span></h3>
+        <div class="grid grid-flow-col grid-cols-2  grid-rows-1 gap-4 justify-items-center divide-x mt-5">
+          <div class>
+         
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Description :</label>
+           
+          </div>
+          <div class="mb-3">
+            <label id="sizeLabel" for="formGroupExampleInput2" class="form-label">Size :</label>
+           <input type="text" id="size" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label id ="addressLabel" for="formGroupExampleInput2" class="form-label">Address :</label>
+            <input type="text" id="address" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label id="breedLabel" for="formGroupExampleInput2" class="form-label">Breed :</label>
+            <input type="text" id="breed" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label id="colorLabel" for="formGroupExampleInput2" class="form-label">Color :</label>
+            <input type="text" id="color" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label id="statusLabel" for="formGroupExampleInput2" class="form-label">status :</label>
+            <input type="text" id="status" class="form-control">
+         
+          </div>
+        </div>
         <div>
-        
-            <ul>
-            <div>Location : </div>
-            <div>Species : </div>
-            <div>Sex : </div>
-            <div>Age : </div>
-            <div>Size : </div>
-            
-            <div>Desciption : </div>
-            </ul>
+            <label id="photoLabel" for="formGroupExampleInput2" class="form-label">My Photo :</label>
+            <img id="image">
+          </div>
         </div>
     </section>
+   
 
     <h4>Map Location</h4>
         <div id="map"></div>
@@ -35,7 +58,14 @@
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWnMYgAxmbFA2YqFGIZgNvXgFu3v70FXw&callback=initMap&libraries=&v=weekly"
             async>
         </script>
+           <script
+           src="https://code.jquery.com/jquery-3.6.0.js"
+           integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+           crossorigin="anonymous"></script> 
+           <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+         <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.9/js/dataTables.fixedHeader.min.js"></script>
             <script src="third.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+
 </body>
 </html>
