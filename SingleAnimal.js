@@ -73,12 +73,13 @@ function searchApi(animalType, location){
                 // var queryStrings = new Array();
                 for(let j = 0; j < 20; j++){
                     var id = data.animals[j].id;
-                   var name = data.animals[j].name;
-                   var gender=data.animals[j].gender;
-                  var size =data.animals[j].size;
-                  var age =data.animals[j].age
-                  var city = data.animals[j].contact.address.city;
-                   animalInfoArray[j] = new Array(id,name,gender,size,age,city);        
+                    var name = data.animals[j].name;
+                    var gender=data.animals[j].gender;
+                    var size =data.animals[j].size;
+                    var age =data.animals[j].age;
+                    var city = data.animals[j].contact.address.city;
+                  //console.log(data.animals[j].contact.address);
+                    animalInfoArray[j] = new Array(id,name,gender,size,age,city);        
 
                 }
                 createTable(animalInfoArray);
@@ -88,15 +89,15 @@ function searchApi(animalType, location){
     });
 }
 // get lat/long from openweather 
-function getCoord(city) {
-fetch (`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIOWMkey}`) 
-.then(function(response){
-    return response.json();
-}).then(function(data){
-    console.log(data);
-    initMap(data.coord.lat, data.coord.lon);
-}) 
-}
+// function getCoord(city) {
+// fetch (`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIOWMkey}`) 
+// .then(function(response){
+//     return response.json();
+// }).then(function(data){
+//     console.log(data);
+//     // initMap(data.coord.lat, data.coord.lon);
+// }) 
+// }
 
 // creating a table with fetch response
 
@@ -119,15 +120,16 @@ function createTable(animalInfoArray){
 }
 
 //   on click go to third page
-    $('#animalTable').on('click', 'tbody td', function() {
+    $('#animalTable').on('click', 'tbody tr', function() {
 
         //get textContent of the TD
-        console.log('TD cell textContent : ', this.textContent)
+        console.log('TR row textContent : ', this.textContent)
 
         var queryString = 'thirdpage.html?q=' + this.textContent ;
 
 	document.location.assign(queryString);
-    getCoord();
+    // getCoord();
+
 
 
     }) 
