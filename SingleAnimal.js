@@ -17,7 +17,7 @@ $(document).ready(function(){
 })
 function getParams(){
 
-     // Get the search params out of the URL (i.e. `?q=dog&location=92128`) and convert it to an array (i.e. ['?q=london', 'format=photo'])
+     // Get the search params out of the URL (i.e. `?q=dog&location=92128`) 
   var searchParamsArr = document.location.search.split('&');
 
   // Get the query and format values
