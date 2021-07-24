@@ -4,6 +4,10 @@ var APIKey ='mDwvoqomEa5fxCiP21JBDfCukRDaZYMxceKYXzfwtRkJeicJ1j';
 var secret ='mRZfJm0DLH12TpJJRgUtlnG5b32lHznG0Jyn2vBO';
 var token_obj = new Object();
 var animalInfoArray = new Array();
+
+// API openweather
+var APIOWMkey = 'c9299c81fa72cf0649fc417ca5d0c2b7';
+
 $(document).ready(function(){
 
    
@@ -64,16 +68,16 @@ function searchApi(animalType, location){
                 console.log('No results found!');
             }
             else{
-                console.log("data"+ JSON.stringify(data));
+                console.log(data.animals);
                 for(let j = 0;j <20 ;j++){
-
-                
+               
                    var id = data.animals[j].id;
                    var name = data.animals[j].name;
                    var gender=data.animals[j].gender;
                   var size =data.animals[j].size;
                   var age =data.animals[j].age;
-                   animalInfoArray[j] = new Array(id,name,gender,size,age);
+                  var city = data.animals[j].contact.address.city;
+                   animalInfoArray[j] = new Array(id,name,gender,size,age,city);
 
                    
                 }
@@ -83,11 +87,21 @@ function searchApi(animalType, location){
 });
 }
 
-// creating a table with fetch response
+// get lat/long from openweather 
+function getCoord(city) {
+fetch (`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIOWMkey}`)
+.then(function(response){
+    return response.json();
+}).then(function(data){
+    console.log(data);
+    initMap(data.coord.lat, data.coord.lon);
+}) 
+}
 
 // creating a table with fetch response
 
 function createTable(animalInfoArray){
+    // console.log(animalInfoArray);
     $('#animalTable').DataTable({
     
     "data" : animalInfoArray,
@@ -96,8 +110,8 @@ function createTable(animalInfoArray){
         { "title": "Name" },
         { "title": "Gender" },
         { "title": "Size" },
-        { "title": "Age" }
-        
+        { "title": "Age" },
+        { "title": "City"}
     ]
     
     });
@@ -133,3 +147,4 @@ function createTable(animalInfoArray){
 
 // fetch(' https://api.petfinder.com/v2/animalstype')
 
+    // inside click action will call open weather search and hand it the 5th index of the array
