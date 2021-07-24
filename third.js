@@ -1,3 +1,5 @@
+var APIgoogleKey = 'AIzaSyCWnMYgAxmbFA2YqFGIZgNvXgFu3v70FXw';
+
 // testing to see if map works
 $(document).ready(function(){
   initMap();
