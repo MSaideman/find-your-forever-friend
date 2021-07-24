@@ -73,3 +73,4 @@ $('#btnSearch').click(function(){
 	document.location.assign(queryString);
 
 })
+

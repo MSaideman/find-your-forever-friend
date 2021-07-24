@@ -103,3 +103,33 @@ function createTable(animalInfoArray){
     });
     
     }
+
+//   on click go to third page
+    $('#animalTable').on('click', 'tbody td', function() {
+
+        //get textContent of the TD
+        console.log('TD cell textContent : ', this.textContent)
+
+        var queryString = 'thirdpage.html?q=' + this.textContent ;
+
+	document.location.assign(queryString);
+
+
+    }) 
+// call by id 
+//     $( document ).ready(function() {
+// getParams()
+
+//     })
+// function getParams(){
+//     var searchParam = document.location.search.split('&');
+
+//     var id = 
+//     getanimalDetales (id)
+// }
+
+// function getanimalDetales(id){
+
+
+// fetch(' https://api.petfinder.com/v2/animalstype')
+
