@@ -28,8 +28,6 @@ function getParams(){
 }
 
 
-//get details about a single animal type the user selected
-
 // This is a POST request, because we need the API to generate a new token for us
 
 function searchApi(animalType, location){
@@ -71,77 +69,27 @@ function searchApi(animalType, location){
                 console.log('No results found!');
             }
             else{
-
-                console.log("data"+ JSON.stringify(data));
+                console.log(data.animals);
                 // var queryStrings = new Array();
                 for(let j = 0; j < 20; j++){
                     var id = data.animals[j].id;
-
-                console.log(data.animals);
-                for(let j = 0;j <20 ;j++){
-               
-                   var id = data.animals[j].id;
-
                    var name = data.animals[j].name;
                    var gender=data.animals[j].gender;
                   var size =data.animals[j].size;
-                  var age =data.animals[j].age;
-
-                   animalInfoArray[j] = new Array(id,name,gender,size,age);
-
+                  var age =data.animals[j].age
                   var city = data.animals[j].contact.address.city;
-                   animalInfoArray[j] = new Array(id,name,gender,size,age,city);
-
-                   
+                   animalInfoArray[j] = new Array(id,name,gender,size,age,city);        
 
                 }
-                
-
                 createTable(animalInfoArray);
-
-                // for(let j = 0;j <20 ;j++){
-                //     let organizationLink = 'https://api.petfinder.com/v2/organizations/' + data.animals[j].organization_id;
-                    
-                //     fetch(organizationLink, {
-                //         headers: {
-                //             'Authorization': oauthData.token_type + ' ' + oauthData.access_token,
-                //             'Content-Type': 'application/json'
-                //         }
-                //     }).then(function(resp){
-                //         return resp.json();
-                //     }).then(function(org){
-                //         // console.log(org);
-                //         let address = org.organization.address;
-                //         //console.log(address);
-                //         let beforeHTML = $('#animalTable').data[j]
-                //         $('#animalTable').data[j][1] = '<a href=' + 
-                //         'thirdpage.html?address=' + 
-                //         address.address1 + 
-                //         ',+' + 
-                //         address.city + 
-                //         ',+' + 
-                //         address.state + 
-                //         '&key=AIzaSyDCXM4aNnhOduTO2-16fXCEss9rp3vQh1E>' +
-                //         beforeHTML +
-                //         '</a>';
-                //     });
-                                                        
-                // }
             }
+        }
+    );
     });
-});
 }
-
-// function setNextPage(page){
-//     queryString = page;
-//     console.log(queryString);
-// }
-// creating a table with fetch response
-
-
 // get lat/long from openweather 
 function getCoord(city) {
-fetch (`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIOWMkey}`)
+fetch (`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIOWMkey}`) 
 .then(function(response){
     return response.json();
 }).then(function(data){
@@ -149,7 +97,6 @@ fetch (`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIOWM
     initMap(data.coord.lat, data.coord.lon);
 }) 
 }
-
 
 // creating a table with fetch response
 
