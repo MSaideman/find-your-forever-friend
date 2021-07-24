@@ -113,40 +113,10 @@ function createTable(animalInfoArray){
         { "title": "Age" },
         { "title": "City"}
     ]
-    
+
     });
-
-    // var table = $('#animalTable');
-    // var rows = table.getElementsByTagName('tr');
-    // for(i=0; i < rows.length; i++){
-    //     var currentRow = table.rows[i];
-    //     var createClickHandler = 
-    //         function(row){
-    //             return function(){
-    //                 // function getAnimalData(index){
-    //                 //     return row.getElementsByTagName('td')[index].innerHTML;
-    //                 // }
-    //                 // let Id = getAnimalData(0);
-    //                 // let Name = getAnimalData(1);
-    //                 // let Gender = getAnimalData(2);
-    //                 // let Size = getAnimalData(3);
-    //                 // let Age = getAnimalData(4);
-                    
-    //                 // open third page with animal info
-
-    //                 //var queryString = 'thirdpage.html?Id=' + Id + '&Name=' + Name + '&Gender=' + Gender + '&Size=' + Size + '&Age=' + Age;
-    //                 let address = storedAnimalLocation[i];
-                    
-    //                 var queryString = 'thirdpage.html?address=' + address.address1 + ',+' + address.city + ',+' + address.state + '&key=AIzaSyDCXM4aNnhOduTO2-16fXCEss9rp3vQh1E';
-
-
-	//                 document.location.assign(queryString);
-    //             };
-    //         };
-    //     currentRow.onclick = createClickHandler(currentRow);
-    // }
     
-    }
+}
 
 //   on click go to third page
     $('#animalTable').on('click', 'tbody td', function() {
@@ -157,26 +127,10 @@ function createTable(animalInfoArray){
         var queryString = 'thirdpage.html?q=' + this.textContent ;
 
 	document.location.assign(queryString);
+    getCoord();
 
 
     }) 
-// call by id 
-//     $( document ).ready(function() {
-// getParams()
-
-//     })
-// function getParams(){
-//     var searchParam = document.location.search.split('&');
-
-//     var id = 
-//     getanimalDetales (id)
-// }
-
-// function getanimalDetales(id){
-
-
-// fetch(' https://api.petfinder.com/v2/animalstype')
-
 
     // inside click action will call open weather search and hand it the 5th index of the array
 
