@@ -118,6 +118,6 @@ else
   $('#color').val('data not available');
 }
 $('#status').val(data.animal.status);
-$('#image').attr("src",data.animal.photos[0].full)
+$('#image').attr("src",data.animal.photos[0].medium);
 
 }
