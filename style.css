@@ -52,3 +52,7 @@ button {
   border-radius: 1em;
   padding: 0.25em;
 }
+
+#animalTable {
+  cursor: pointer;
+}
