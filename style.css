@@ -3,32 +3,14 @@ body {
   height: 100vh;
 }
 
-.sidecontainer {
-  padding: 10%;
-  margin: 10%;
-  background-color: rgb(219, 216, 211);
-  text-align: center;
-}
-
-.b,
-.c {
-  border: black solid;
-  background-color: rgb(219, 216, 211);
-  font-size: large;
-}
 #search {
   box-sizing: content-box;
 }
 /* for pict1  */
-.pic1 {
+.homepic {
   border: 1px solid coral;
   width: 100%;
 }
-.pic2 {
-  height: 200px;
-  width: 50%;
-}
-
 #petSearch:hover {
   cursor: pointer;
 }
