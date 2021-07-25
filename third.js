@@ -6,12 +6,25 @@ var weatherGeocodingAPIKey = '74188098e57f83a47b8566f3d3a0cabf'
 // testing to see if map works
 $(document).ready(function(){
   getParams();
-  getCoord(/*zip code, state code*/)
+  var zip = getZip();
+  
+  // console.log(`zip: ${zip}, state: ${state}`);
+  getCoord(zip);
   // initMap();
 });
 
-function getCoord(zip, state) {
-  fetch (`http://api.openweathermap.org/geo/1.0/zip?zip=${zip},${state}&appid=${weatherGeocodingAPIKey}`) 
+
+function getZip(){
+  var url = document.location.search;
+  let ind=url.length;
+  let zipCode = url.substring(ind-5, ind);
+  
+  
+  return zipCode;
+}
+
+function getCoord(zip) {
+  fetch (`http://api.openweathermap.org/geo/1.0/zip?zip=${zip},US&appid=${weatherGeocodingAPIKey}`) 
   .then(function(response){
       return response.json();
   }).then(function(data){

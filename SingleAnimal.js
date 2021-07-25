@@ -10,6 +10,8 @@ var storedAnimalLocation = new Array();
 // API openweather
 var APIOWMkey = 'c9299c81fa72cf0649fc417ca5d0c2b7';
 
+
+
 $(document).ready(function(){
 
    
@@ -78,8 +80,11 @@ function searchApi(animalType, location){
                     var size =data.animals[j].size;
                     var age =data.animals[j].age;
                     var city = data.animals[j].contact.address.city;
+                    // var state = data.animals[j].contact.address.state;
+                    var postcode = data.animals[j].contact.address.postcode;
                   //console.log(data.animals[j].contact.address);
-                    animalInfoArray[j] = new Array(id,name,gender,size,age,city);        
+                    animalInfoArray[j] = new Array(id,name,gender,size,age,city,postcode);       
+                    
 
                 }
                 createTable(animalInfoArray);
@@ -112,7 +117,9 @@ function createTable(animalInfoArray){
         { "title": "Gender" },
         { "title": "Size" },
         { "title": "Age" },
-        { "title": "City"}
+        { "title": "City"},
+        { "title": "Zip Code"},
+        
     ]
 
     });
