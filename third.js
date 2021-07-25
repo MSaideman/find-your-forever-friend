@@ -76,7 +76,6 @@ function getInfoById(Id){
 
     // Log the API data
     console.log('token', data);
-    var oauthData = data
      token_obj.access_token = data.token_type;
      token_obj.expires_in = data.expires_in;
      token_obj.token_type=data.token_type;
@@ -108,29 +107,34 @@ function getInfoById(Id){
 }
 
 function displayDetails(data){
-  console.log(data.animal.name);
-
 $('#petName').text (data.animal.name);
-console.log(data.animal.size);
-$('#size').val(data.animal.size);
+$('#size').text(data.animal.size);
+var desc =escapeHtml(data.animal.description);
+$('#description').text(desc);
 if(!data.animal.contact.address.address1 == null){
-$('#address').val(data.animal.contact.address.address1 ,
+$('#address').text(data.animal.contact.address.address1 ,
   data.animal.contact.address.city,data.animal.contact.address.state,
   data.animal.contact.address.country,data.animal.contact.postalcode );
 }
 else{
-  $('#address').val(data.animal.contact.address.city,data.animal.contact.address.state,
+  $('#address').text(data.animal.contact.address.city,data.animal.contact.address.state,
     data.animal.contact.address.country,data.animal.contact.postalcode );
 }
-$("#breed").val(data.animal.breeds.primary);
+$("#breed").text(data.animal.breeds.primary);
 if(!data.animal.colors.primary === null){
-$('#color').val(data.animal.colors.primary);
+$('#color').text(data.animal.colors.primary);
 }
 else
 {
-  $('#color').val('data not available');
+  $('#color').text('data not available');
 }
-$('#status').val(data.animal.status);
+$('#status').text(data.animal.status);
 $('#image').attr("src",data.animal.photos[0].medium);
 
+}
+
+// function to replace htmlcode
+function escapeHtml(unsafe) {
+  
+   return unsafe.replace(/&amp;#39;/gi, "'");
 }
