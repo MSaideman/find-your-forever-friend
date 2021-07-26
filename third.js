@@ -22,21 +22,10 @@ function getZip(){
   
   return zipCode;
 }
-
-function getCoord(zip) {
-  fetch (`http://api.openweathermap.org/geo/1.0/zip?zip=${zip},US&appid=${weatherGeocodingAPIKey}`) 
-  .then(function(response){
-      return response.json();
-  }).then(function(data){
-      console.log(data);
-      initMap(data.lat, data.lon);
-  }); 
-}
-
 function initMap(lat, lng) {
-  console.log(lat, lng)
+  // console.log(lat, lng)
   // The location
-  const location = { lat: lat, lng: lng};
+  const location = { lat: parseFloat(lat), lng: parseFloat(lng)};
   // The map, centered at the location
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
@@ -48,6 +37,18 @@ function initMap(lat, lng) {
     map: map,
   });
 }
+
+function getCoord(zip) {
+  fetch (`http://api.openweathermap.org/geo/1.0/zip?zip=${zip},US&appid=${weatherGeocodingAPIKey}`) 
+  .then(function(response){
+      return response.json();
+  }).then(function(data){
+      console.log(data);
+      initMap(data.lat, data.lon);
+  }); 
+}
+
+
 
 function getParams(){
 
