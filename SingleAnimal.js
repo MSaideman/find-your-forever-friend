@@ -115,7 +115,6 @@ function createTable(animalInfoArray){
         { "title": "Gender" },
         { "title": "Size" },
         { "title": "Age" },
-        { "title": "City"},
         { "title": "Zip Code"},
         
     ]
