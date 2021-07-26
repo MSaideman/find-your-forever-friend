@@ -113,12 +113,12 @@ $('#size').text(data.animal.size);
 var desc =escapeHtml(data.animal.description);
 $('#description').text(desc);
 if(!data.animal.contact.address.address1 == null){
-$('#address').text(data.animal.contact.address.address1 ,
+$('#address').val(data.animal.contact.address.address1 ,
   data.animal.contact.address.city,data.animal.contact.address.state,
   data.animal.contact.address.country,data.animal.contact.postalcode );
 }
 else{
-  $('#address').text(data.animal.contact.address.city,data.animal.contact.address.state,
+  $('#address').val(data.animal.contact.address.city,data.animal.contact.address.state,
     data.animal.contact.address.country,data.animal.contact.postalcode );
 }
 $("#breed").text(data.animal.breeds.primary);
