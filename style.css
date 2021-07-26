@@ -1,6 +1,10 @@
 
-body {
+/* body {
   height: 100vh;
+} */
+.bodyP3{
+  margin: 0%;
+  padding:0%;
 }
 
 #search {
@@ -8,15 +12,18 @@ body {
 }
 /* for pict1  */
 .homepic {
-  border: 1px solid coral;
   width: 100%;
 }
 #petSearch:hover {
   cursor: pointer;
 }
 
-
-
+.nav3rdpage{
+  background-color: #ff75f8dc;
+}
+#locationbar{
+  background-color: #ff75f8dc;
+}
   
 #map {
   height: 400px;
@@ -25,7 +32,7 @@ body {
   /* The width is the width of the web page */
 }
 
-button {
+ #btnSearch{
   background-color: #1f305e;
   border-radius: 1em;
   padding: 0.25em;
