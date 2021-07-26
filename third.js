@@ -115,11 +115,11 @@ $('#description').text(desc);
 if(!data.animal.contact.address.address1 == null){
 $('#address').val(data.animal.contact.address.address1 ,
   data.animal.contact.address.city,data.animal.contact.address.state,
-  data.animal.contact.address.country,data.animal.contact.postalcode );
+  data.animal.contact.address.country,data.animal.contact.address.postcode );
 }
 else{
   $('#address').val(data.animal.contact.address.city,data.animal.contact.address.state,
-    data.animal.contact.address.country,data.animal.contact.postalcode );
+    data.animal.contact.address.country,data.animal.contact.address.postcode );
 }
 $("#breed").text(data.animal.breeds.primary);
 if(!data.animal.colors.primary === null){
