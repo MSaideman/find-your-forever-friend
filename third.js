@@ -39,7 +39,7 @@ function initMap(lat, lng) {
 }
 
 function getCoord(zip) {
-  fetch (`http://api.openweathermap.org/geo/1.0/zip?zip=${zip},US&appid=${weatherGeocodingAPIKey}`) 
+  fetch (`https://api.openweathermap.org/geo/1.0/zip?zip=${zip},US&appid=${weatherGeocodingAPIKey}`) 
   .then(function(response){
       return response.json();
   }).then(function(data){
