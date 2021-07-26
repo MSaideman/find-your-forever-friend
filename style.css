@@ -11,8 +11,13 @@
   box-sizing: content-box;
 }
 /* for pict1  */
+.piccontainer{
+  height: 40%;
+  
+}
 .homepic {
-  width: 100%;
+  width: 80%;
+  height: 500px;
 }
 #petSearch:hover {
   cursor: pointer;
