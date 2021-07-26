@@ -79,11 +79,9 @@ function searchApi(animalType, location){
                     var gender=data.animals[j].gender;
                     var size =data.animals[j].size;
                     var age =data.animals[j].age;
-                    var city = data.animals[j].contact.address.city;
-                    // var state = data.animals[j].contact.address.state;
                     var postcode = data.animals[j].contact.address.postcode;
                   //console.log(data.animals[j].contact.address);
-                    animalInfoArray[j] = new Array(id,name,gender,size,age,city,postcode);       
+                    animalInfoArray[j] = new Array(id,name,gender,size,age,postcode);       
                     
 
                 }
