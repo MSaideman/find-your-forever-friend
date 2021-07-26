@@ -110,7 +110,13 @@ function getInfoById(Id){
 function displayDetails(data){
 $('#petName').text (data.animal.name);
 $('#size').text(data.animal.size);
+if(data.animal.description !== null)
+{
 var desc =escapeHtml(data.animal.description);
+}
+else{
+  var desc = "No description found";
+}
 $('#description').text(desc);
 if(!data.animal.contact.address.address1 == null){
 $('#address').val(data.animal.contact.address.address1 ,
