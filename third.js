@@ -150,7 +150,15 @@ $('#image').attr("src",'./images/duck.jpg');
   else if(data.animal.species == "chicken"){
     $('#image').attr("src",'./images/chicken.jpg');
   }
-  
+  else if (data.animal.species == "Dog"){
+    $('#image').attr("src",'./images/dog.jpg');
+  }
+  else if(data.animal.species == "Horse"){
+    $('#image').attr("src",'./images/horse.jpg');
+  }
+  else if (data.animal.species == "Cat"){
+    $('#image').attr("src",'./images/cat.jpg');
+  }
 }
 $('#image').css({'width' : '400px' , 'height' : '600px'});
 }
