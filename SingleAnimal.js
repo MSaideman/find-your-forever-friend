@@ -22,9 +22,9 @@ function getParams(){
      // Get the search params out of the URL (i.e. `?q=dog&location=92128`) 
   var searchParamsArr = document.location.search.split('&');
 
-  // Get the query and format values
   var animalType = searchParamsArr[0].split('=').pop();
   var location = searchParamsArr[1].split('=').pop();
+
 
   searchApi(animalType, location);
 }
@@ -55,7 +55,7 @@ function searchApi(animalType, location){
          token_obj.access_token = data.token_type;
          token_obj.expires_in = data.expires_in;
          token_obj.token_type=data.token_type;
-        return fetch(' https://api.petfinder.com/v2/animals?type='+ animalType+ '&location='+location, {
+        return fetch(' https://api.petfinder.com/v2/animals?type='+animalType+ '&location='+location, {
             headers: {
                 'Authorization': data.token_type + ' ' + data.access_token,
                 'Content-Type': 'application/json'
@@ -72,8 +72,10 @@ function searchApi(animalType, location){
             }
             else{
                 console.log(data.animals);
+
+               
                 // var queryStrings = new Array();
-                for(let j = 0; j < 20; j++){
+                for(let j = 0; j < data.animals.length; j++){
                     var id = data.animals[j].id;
                     var name = data.animals[j].name;
                     var gender=data.animals[j].gender;
@@ -82,11 +84,11 @@ function searchApi(animalType, location){
                     var postcode = data.animals[j].contact.address.postcode;
                   //console.log(data.animals[j].contact.address);
                     animalInfoArray[j] = new Array(id,name,gender,size,age,postcode);       
-                    
+                }
 
                 }
-                createTable(animalInfoArray);
-            }
+                createTable(animalInfoArray,animalType);
+           
         }
     );
     });
@@ -104,8 +106,9 @@ function searchApi(animalType, location){
 
 // creating a table with fetch response
 
-function createTable(animalInfoArray){
+function createTable(animalInfoArray,animalType){
     // console.log(animalInfoArray);
+    $('#pet_type').text(animalType);
     $('#animalTable').DataTable({
     
     "data" : animalInfoArray,
