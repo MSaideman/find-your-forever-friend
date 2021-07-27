@@ -118,17 +118,17 @@ else{
   var desc = "No description found";
 }
 $('#description').text(desc);
-if(!data.animal.contact.address.address1 == null){
-$('#address').val(data.animal.contact.address.address1 ,
+if(data.animal.contact.address.address1 !== null){
+$('#address').text(data.animal.contact.address.address1,
   data.animal.contact.address.city,data.animal.contact.address.state,
   data.animal.contact.address.country,data.animal.contact.address.postcode );
 }
 else{
-  $('#address').val(data.animal.contact.address.city,data.animal.contact.address.state,
+  $('#address').text(data.animal.contact.address.city,data.animal.contact.address.state,
     data.animal.contact.address.country,data.animal.contact.address.postcode );
 }
 $("#breed").text(data.animal.breeds.primary);
-if(!data.animal.colors.primary === null){
+if(data.animal.colors.primary !== null){
 $('#color').text(data.animal.colors.primary);
 }
 else
@@ -136,8 +136,23 @@ else
   $('#color').text('data not available');
 }
 $('#status').text(data.animal.status);
-$('#image').attr("src",data.animal.photos[0].medium);
-
+if(data.animal.photos.length !=0)
+{
+  $('#image').attr("src",data.animal.photos[0].medium);
+}
+else{
+  if(data.animal.species =="Duck"){
+$('#image').attr("src",'./images/duck.jpg');
+  }
+  else if(data.animal.species == "Parrot"){
+    $('#image').attr("src",'./images/parrot.jpg');
+  }
+  else if(data.animal.species == "chicken"){
+    $('#image').attr("src",'./images/chicken.jpg');
+  }
+  
+}
+$('#image').css({'width' : '400px' , 'height' : '600px'});
 }
 
 // function to replace htmlcode
